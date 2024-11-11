@@ -4,9 +4,28 @@ body{
   background-color: #fff;
   width: 100vw;
   height: 100vh;
+ font-family: 'Lufga';
   
 }
+
 /* index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @font-face {
+  font-family: 'Lufga';
+  src: url('./assets/Lufga/Lufga-Regular.woff2') format('woff2'),
+       url('./assets/fonts/Lufga-Regular.woff') format('woff'),
+       url('./assets/fonts/Lufga-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+/* src\assets\Lufga\Demo_Fonts\Fontspring-DEMO-lufga-black.otf */
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('./assets/Lufga/Demo_Fonts/Fontspring-DEMO-lufga-regular.otf') format('otf');
+  font-weight: bold;
+  font-style: normal;
+}
