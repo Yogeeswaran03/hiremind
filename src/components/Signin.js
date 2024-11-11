@@ -5,30 +5,33 @@ import '../App.css';
 import google from '../assets/google_symbol.svg.png';
 import apple from '../assets/Logo.svg.png';
 import facebook from '../assets/Symbol.svg.png';
-import { FaEye, FaEyeSlash } from 'react-icons/fa'; // For the eye icon
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Signin = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const navigate = useNavigate(); // Initialize navigate function
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
 
   const handleRegisterClick = () => {
-    navigate('/signup'); // Navigate to the Signup page
+    navigate('/'); // Navigate to the Signup page
   };
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen items-center justify-center p-4 md:p-16 md:px-20">
       {/* Parent container with flex and equal height */}
-      <div className="flex w-full h-full md:w-3/4 max-w-screen-xl">
-        {/* Left Section */}
+      <div className="flex flex-col-reverse md:flex-row w-full h-full md:w-3/4 max-w-screen-xl">
+        
+        {/* Left Section - Content */}
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8 md:p-12 rounded-xl border border-gray-300">
           <h2 className="text-3xl font-bold mb-4">Welcome back!</h2>
-          <p className="text-gray-600 text-center mb-8 text-sm">
-            We're glad to see you again. Log in to pick up where you left off, access your personalized content, and explore what's new.
-          </p>
+          <div className="text-center mb-8 text-sm">
+            <p className="text-gray-600">
+              We're glad to see you again. Log in to pick up where you left off, access your personalized content, and explore what's new.
+            </p>
+          </div>
 
           {/* Input Fields */}
           <input
@@ -101,12 +104,11 @@ const Signin = () => {
           </div>
         </div>
 
-        {/* Right Section */}
-        <div className="bg-customgreen w-full md:w-1/2 flex flex-col justify-center items-center p-8 md:p-12 rounded-xl">
+        {/* Right Section - Image */}
+        <div className="w-full bg-white md:bg-customgreen md:w-1/2 flex justify-center items-center flex flex-col p-8 md:p-12 rounded-xl">
           <img src={signin} alt="signin" className="w-3/4 md:w-2/3 mb-6 rounded-lg" />
-          <h4 className="text-black text-lg text-center">
-            We’re excited to have you here again! Dive right back in to discover what’s new and pick up where you left off.
-          </h4>
+          <p className="hidden md:block text-black text-lg text-center">
+          We’re excited to have you here again! Dive right back in to discover what’s new and pick up where you left off.            </p>
         </div>
       </div>
     </div>

@@ -16,17 +16,20 @@ const Signup = () => {
   return (
     <div className="flex flex-col md:flex-row min-h-screen items-center justify-center p-4 md:p-16 md:px-20">
       {/* Parent container with flex and equal height */}
-      <div className="flex w-full h-full md:w-3/4 max-w-screen-xl">
-
-        {/* Left Section */}
-        <div className="bg-customgreen w-full md:w-1/2 flex flex-col justify-center items-center p-8 md:p-12 rounded-xl">
-          <img src={signup} alt="signup" className="w-3/4 md:w-2/3 mb-6 rounded-lg" />
-          <h4 className="text-black text-lg text-center">
-            Unlock exclusive features, personalize your experience, and stay connected with everything you love.
-          </h4>
+      <div className="flex flex-col md:flex-row w-full h-full md:w-3/4 max-w-screen-xl">
+        
+        {/* Left Section - Show only photo for mobile */}
+        <div className="w-full md:w-1/2 flex justify-center items-center bg-white p-8 md:bg-customgreen md:p-12 rounded-xl">
+          <div className="flex flex-col items-center">
+            <img src={signup} alt="signup" className="w-3/4 md:w-2/3 mb-6 rounded-lg" />
+            {/* Keep the <p> tag only for desktop view */}
+            <p className="hidden md:block text-black text-lg text-center">
+              Unlock exclusive features, personalize your experience, and stay connected with everything you love.
+            </p>
+          </div>
         </div>
 
-        {/* Right Section */}
+        {/* Right Section - All content in column for mobile */}
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8 md:p-12 rounded-xl border border-gray-300">
           <h2 className="text-3xl font-bold mb-4">Create Account</h2>
           <p className="text-gray-600 text-center mb-8">
@@ -58,13 +61,13 @@ const Signup = () => {
           </div>
 
           {/* Buttons */}
-          <div className="flex justify-center gap-4 mb-8 w-full">
-            <button className="bg-black text-white p-3 px-6 rounded-3xl w-full md:w-full">
+          <div className="flex flex-col md:flex-row justify-center gap-4 mb-8 w-full">
+            <button className="bg-black text-white p-3 px-6 rounded-3xl w-full">
               Register
             </button>
             <button
               onClick={handleSignInClick} // Navigate to SignIn page
-              className="bg-white text-black border px-6 border-gray-300 p-3 rounded-3xl w-full md:w-full"
+              className="bg-white text-black border px-6 border-gray-300 p-3 rounded-3xl w-full"
             >
               Sign In
             </button>
